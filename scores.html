@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Please input a number between 0.0 and 1.0:</p>
+
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()" >Test Input</button>
+<p id="box"></p>
+
+<script>
+function myFunction() {
+  var message, x;
+  message = document.getElementById("box");
+  message.innerHTML = "";
+  x = document.getElementById("demo").value;
+  try {
+
+    if(x == "")  throw "Please enter a number from 0.0 to 1.0";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+
+    if (x > 1.0) throw "Please enter a number from 0.0 to 1.0";
+
+    else if (0.9 <= x >= 1.0) throw "A";
+
+    else if (x >= 0.8) throw "B";
+
+    else if (x >= 0.7) throw "C";
+
+    else if (x >= 0.6) throw "D";
+
+    else if(x < 0.6)  throw "F";
+
+    return x;
+  }
+  catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+</script>
+
+</body>
+</html>
+
